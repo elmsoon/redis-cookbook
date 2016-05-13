@@ -30,7 +30,10 @@ module RedisCookbook
       # @!attribute mode
       # @return [String]
       attribute(:mode, kind_of: String, default: '0440')
-
+      attribute(:dir, kind_of: String, default: lazy { "/var/lib/redis/#{instance_name}" })
+      # @!attribute log_dir
+      # @return [String]
+      attribute(:log_dir, kind_of: String, default: '/var/log/redis') 
       # @!attribute instance_name
       # @return [String]
       attribute(:instance_name, kind_of: String, name_attribute: true)
