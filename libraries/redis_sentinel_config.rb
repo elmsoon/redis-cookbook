@@ -31,6 +31,7 @@ module RedisCookbook
       # @return [String]
       attribute(:mode, kind_of: String, default: '0440')
       attribute(:dir, kind_of: String, default: lazy { "/var/lib/redis/#{instance_name}" })
+      attribute(:logfile, kind_of: String, default: lazy { ::File.join(log_dir, "#{instance_name}.log") })
       # @!attribute log_dir
       # @return [String]
       attribute(:log_dir, kind_of: String, default: '/var/log/redis') 
